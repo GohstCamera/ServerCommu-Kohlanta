@@ -1,0 +1,32 @@
+location: world:-63.000:68.000:526.000
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&f=== &9Classement S3 &f==='
+    height: 0.3
+  - content: '#FFC0001&f. &#DAA520Eklipsette'
+    height: 0.3
+  - content: '#FFC0002&f. &#C0C0C0QilinGM'
+    height: 0.3
+  - content: '#FFC0003&f. &#A8703CLoulichee'
+    height: 0.3
+  - content: '#FFC0004&f. &flmaxoulesandwitch'
+    height: 0.3
+  - content: '#FFC0005&f. &fSeth_Kirigaya'
+    height: 0.3
+  - content: '#FFC0006&f. &fNiamoR974'
+    height: 0.3
+  - content: '#FFC0007&f. &fHenrI555556'
+    height: 0.3
+  - content: '#FFC0008&f. &fPenguinGamingO4'
+    height: 0.3
+  - content: '#FFC0009&f. &fOssoan26'
+    height: 0.3
+  - content: '#FFC00010&f. &flollo11e1'
+    height: 0.3
+  actions: {}

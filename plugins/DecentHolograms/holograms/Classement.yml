@@ -1,0 +1,32 @@
+location: world:-1.409:68.000:512
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&f=== &2Classement Général &f==='
+    height: 0.3
+  - content: '#FFC0001&f. &#DAA520Loulichee | 76 Points'
+    height: 0.3
+  - content: '#FFC0002&f. &#C0C0C0Eklipsette | 67 Points'
+    height: 0.3
+  - content: '#FFC0003&f. &#A8703COssoan26 | 56 Points'
+    height: 0.3
+  - content: '#FFC0004&f. &fREMI_720 | 54 Points'
+    height: 0.3
+  - content: '#FFC0005&f. &fSeth_Kirigaya | 51 Point'
+    height: 0.3
+  - content: '#FFC0006&f. &fSerereee | 44 Points'
+    height: 0.3
+  - content: '#FFC0007&f. &fAlphaOmegon | 40 Points'
+    height: 0.3
+  - content: '#FFC0008&f. &fHenri5555556 | 40 Points'
+    height: 0.3
+  - content: '#FFC0009&f. &fThe_Nitro_ | 39 Points'''
+    height: 0.3
+  - content: '#FFC00010&f. &fNiamoR974 | 33 Points'
+    height: 0.3
+  actions: {}

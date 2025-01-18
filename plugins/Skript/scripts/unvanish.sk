@@ -1,0 +1,6 @@
+command /unvanish <player>:
+    permission: admin.vanish.leave
+    permission message: &cVous n'avez pas la permission d'utiliser cette commande.
+    trigger:
+        execute console command "effect clear %arg-1% minecraft:invisibility "
+        send "&aLe joueur %arg-1% a est présent." to player

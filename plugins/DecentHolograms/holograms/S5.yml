@@ -1,0 +1,32 @@
+location: world:-48.000:68.000:518.000
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&f=== &2Classement S5 &f==='
+    height: 0.3
+  - content: '#FFC0001&f. &#DAA520Loulichee'
+    height: 0.3
+  - content: '#FFC0002&f. &#C0C0C0The_Nitro_'
+    height: 0.3
+  - content: '#FFC0003&f. &#A8703CAlphaOmegon'
+    height: 0.3
+  - content: '#FFC0004&f. &ffolcla'
+    height: 0.3
+  - content: '#FFC0005&f. &fEklipseee'
+    height: 0.3
+  - content: '#FFC0006&f. &fPenguinGaming04'
+    height: 0.3
+  - content: '#FFC0007&f. &fAymi189'
+    height: 0.3
+  - content: '#FFC0008&f. &fCoucou5000'
+    height: 0.3
+  - content: '#FFC0009&f. &fSerereee'
+    height: 0.3
+  - content: '#FFC00010&f. &fN2o_Ravel'
+    height: 0.3
+  actions: {}

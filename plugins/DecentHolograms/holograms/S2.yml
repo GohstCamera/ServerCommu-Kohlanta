@@ -1,0 +1,32 @@
+location: world:-70.000:68.000:532.000
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '#FFFFFF=== #FFFF55Classement S2 #FFFFFF==='
+    height: 0.3
+  - content: '#FFC0001&f. &#DAA520REMI_720'
+    height: 0.3
+  - content: '#FFC0002&f. &#C0C0C0Victo8901'
+    height: 0.3
+  - content: '#FFC0003&f. &#A8703CEklipsette'
+    height: 0.3
+  - content: '#FFC0004&f. &fOssoan26'
+    height: 0.3
+  - content: '#FFC0005&f. &fSerereee'
+    height: 0.3
+  - content: '#FFC0006&f. &fAymi189'
+    height: 0.3
+  - content: '#FFC0007&f. &fPenguinGaming04'
+    height: 0.3
+  - content: '#FFC0008&f. &fQilinGM'
+    height: 0.3
+  - content: '#FFC0009&f. &flevraikaxolo'
+    height: 0.3
+  - content: '#FFC00010&f. &fGxkirikou'
+    height: 0.3
+  actions: {}

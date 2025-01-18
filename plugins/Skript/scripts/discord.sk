@@ -1,0 +1,5 @@
+command /discord:
+    permission: player.discord
+    permission message: &cVous n'avez pas la permission d'utiliser cette commande.
+    trigger:
+        send json "Cliquez ici pour visiter notre discord : {\"text\":\"[Discord]\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://discord.gg/H6bQsEXfTS\"}}"

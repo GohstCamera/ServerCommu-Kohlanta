@@ -1,0 +1,961 @@
+command /menu:
+    permission: skript.menu.presentateur
+    trigger:
+        set {_menu} to a new chest inventory with 3 rows named "Menu Principal"
+
+        # Configuration des cases spécifiques
+        set slot 0 of {_menu} to black stained glass pane named " "
+        set slot 1 of {_menu} to black stained glass pane named " "
+        set slot 2 of {_menu} to black stained glass pane named " "
+        set slot 3 of {_menu} to brown stained glass pane named " "
+        set slot 4 of {_menu} to brown stained glass pane named " "
+        set slot 5 of {_menu} to brown stained glass pane named " "
+        set slot 6 of {_menu} to black stained glass pane named " "
+        set slot 7 of {_menu} to black stained glass pane named " "
+        set slot 8 of {_menu} to black stained glass pane named " "
+
+        set slot 9 of {_menu} to black stained glass pane named " "
+        set slot 10 of {_menu} to player head named "&e&lPlayer&r"
+        set slot 11 of {_menu} to black stained glass pane named " "
+        set slot 12 of {_menu} to brown stained glass pane named " "
+        set slot 13 of {_menu} to book named "&e&lTP&r"
+        set slot 14 of {_menu} to brown stained glass pane named " "
+        set slot 15 of {_menu} to black stained glass pane named " "
+        set slot 16 of {_menu} to grass block named "&e&lEpreuves&r"
+        set slot 17 of {_menu} to black stained glass pane named " "
+        set slot 18 of {_menu} to black stained glass pane named " "
+        set slot 19 of {_menu} to black stained glass pane named " "
+        set slot 20 of {_menu} to black stained glass pane named "&e&lAdministration"
+        set slot 21 of {_menu} to brown stained glass pane named " "
+        set slot 22 of {_menu} to brown stained glass pane named " "
+        set slot 23 of {_menu} to brown stained glass pane named " "
+        set slot 24 of {_menu} to black stained glass pane named " "
+        set slot 25 of {_menu} to black stained glass pane named " "
+        set slot 26 of {_menu} to black stained glass pane named " "
+
+        open {_menu} to player
+
+
+# Gestion du clic dans l'inventaire
+on inventory click:
+    if name of event-inventory is "Menu Principal":  # Vérifie si l'inventaire est celui du menu principal
+        cancel event  # Empêche toute action dans l'inventaire du menu (comme déplacer les items)
+
+        if index of event-slot is 10:  # Si on clique sur le bouton du menu principal
+            send "Vous avez cliqué sur le Players." to player
+            # Ouvre le premier sous-menu
+            set {_submenu1} to a new chest inventory with 3 rows named "Sous-Menu Players"
+            set slot 10 of {_submenu1} to player head named "&e&lMutes les joueurs&r"
+            set slot 13 of {_submenu1} to player head named "&e&lUnmute les joueurs&r"
+            set slot 16 of {_submenu1} to player head named "&e&lTP les joueurs a leurs iles respectives&r"
+            open {_submenu1} to player
+        if index of event-slot is 13:
+            send "vous avez cliqué sur tp"
+            set {_submenu6} to a new chest inventory with 3 rows named "TP"
+            set slot 0 of {_submenu6} to red wool named "&e&lRouge"
+            set slot 1 of {_submenu6} to yellow wool named "&e&lJaune"
+            set slot 2 of {_submenu6} to black wool named "&e&lIle des Héros"
+            set slot 3 of {_submenu6} to black wool named "&e&lIle de l'Exil"
+            set slot 4 of {_submenu6} to book named "&e&lLe Conseil"
+            set slot 5 of {_submenu6} to end rod named "&e&lLes poteaux"
+            set slot 6 of {_submenu6} to compass named "&e&lL'orientation"
+            set slot 7 of {_submenu6} to light green wool named "&e&lLes Portraits"
+            set slot 8 of {_submenu6} to enchanted book named "&e&lLe Conseil Final"
+            set slot 9 of {_submenu6} to red bed named "&e&lL'infirmerie"
+            set slot 10 of {_submenu6} to bread named "&e&lLe Marché"
+            set slot 11 of {_submenu6} to cherry boat with chest named "&e&lLe Bateau Confort"
+            set slot 12 of {_submenu6} to dirt named "&e&lMaison du jury final"
+            open {_submenu6} to player
+	if index of event-slot is 20:
+	    send "vous avez cliqué sur l'administration"
+	    set {_submenu7} to a new chest inventory with 10 rows named "ADMINISTATION"
+
+# Gestion du Sous-Menu Players
+on inventory click:
+    if name of event-inventory is "Sous-Menu Players":  # Vérifie si l'inventaire est le sous-menu Players
+        cancel event  # Empêche les joueurs d’interagir avec les items
+        if index of event-slot is 10:  # Clic sur "Mute les joueurs"
+            send "Vous avez cliqué sur Mute les joueurs !" to player
+            execute console command "removeroletoall unmute"
+            execute console command "addroletoall mute"
+
+        if index of event-slot is 13:  # Clic sur "Unmute les joueurs"
+            send "Vous avez cliqué sur Unmute les joueurs !" to player
+            execute console command "removeroletoall mute"
+            execute console command "addroletoall unmute"
+
+        if index of event-slot is 16:  # Clic pour téléporter les joueurs à leurs îles respectives
+            execute console command "redtp"
+            execute console command "yellowtp"
+            send "&aTous les joueurs ont rejoint leurs camps."
+
+on inventory click:
+    if name of event-inventory is "Menu Principal":  # Vérifie si l'inventaire est celui du menu principal
+        cancel event  # Empêche toute action dans l'inventaire du menu (comme déplacer les items)
+
+        if index of event-slot is 16:  # Si on clique sur le bouton du menu principal
+            send "Vous avez cliqué sur le Players." to player
+            # Ouvre le premier sous-menu
+            set {_submenu2} to a new chest inventory with 3 rows named "Sous-Menu Epreuves"
+
+            set slot 10 of {_submenu2} to player head named "&e&lGestions des Joueurs&r"
+            set slot 3 of {_submenu2} to orange stained glass pane named " "
+            set slot 4 of {_submenu2} to orange stained glass pane named " "
+            set slot 5 of {_submenu2} to orange stained glass pane named " "
+            set slot 6 of {_submenu2} to white stained glass pane named " "
+            set slot 7 of {_submenu2} to white stained glass pane named " "
+            set slot 8 of {_submenu2} to white stained glass pane named " "
+            set slot 12 of {_submenu2} to orange stained glass pane named " "
+            set slot 14 of {_submenu2} to orange stained glass pane named " "
+            set slot 15 of {_submenu2} to white stained glass pane named " "
+            set slot 17 of {_submenu2} to white stained glass pane named " "
+            set slot 21 of {_submenu2} to orange stained glass pane named " "
+            set slot 22 of {_submenu2} to orange stained glass pane named " "
+            set slot 23 of {_submenu2} to orange stained glass pane named " "
+            set slot 24 of {_submenu2} to white stained glass pane named " "
+            set slot 25 of {_submenu2} to white stained glass pane named " "
+            set slot 26 of {_submenu2} to white stained glass pane named " "
+            set slot 0 of {_submenu2} to white stained glass pane named " "
+            set slot 1 of {_submenu2} to white stained glass pane named " "
+            set slot 2 of {_submenu2} to white stained glass pane named " "
+            set slot 9 of {_submenu2} to white stained glass pane named " "
+            set slot 11 of {_submenu2} to white stained glass pane named " "
+            set slot 18 of {_submenu2} to white stained glass pane named " " 
+            set slot 19 of {_submenu2} to white stained glass pane named " "
+            set slot 20 of {_submenu2} to white stained glass pane named " "
+            set slot 13 of {_submenu2} to orange wool named "&e&lEpreuves en équipes&r"
+            set slot 16 of {_submenu2} to white wool named "&e&lEpreuves individuelles&r"
+            open {_submenu2} to player
+on inventory click:
+    if name of event-inventory is "TP":
+        cancel event
+        if index of event-slot is 0:
+            execute console command "tp @a[team=presentateur] -264 63 574"
+        if index of event-slot is 1:
+            execute console command "tp @a[team=presentateur] 458 63 -176"
+        if index of event-slot is 2:
+            execute console command "tp @a[team=presentateur] 603 64 164"
+        if index of event-slot is 3:
+            execute console command "tp @a[team=presentateur] 434 64 447"
+        if index of event-slot is 4:
+            execute console command "tp @a[team=presentateur] 171 65 463"
+        if index of event-slot is 5:
+            execute console command "tp @a[team=presentateur] 237 63 -250"
+        if index of event-slot is 6:
+            execute console command "tp @a[team=presentateur] 423 63 330"
+        if index of event-slot is 7:
+            execute console command "tp @a[team=presentateur] -273 105 237"
+        if index of event-slot is 8:
+            execute console command "tp @a[team=presentateur] -311 123 228"
+        if index of event-slot is 9:
+            execute console command "tp @a[team=presentateur] -2 81 -4"
+        if index of event-slot is 10:
+            execute console command "tp @a[team=presentateur] -1 113 -339"
+        if index of event-slot is 11: 
+            execute console command "tp @a[team=presentateur] -29 66 719"
+        if index of event-slot is 12:
+            execute console command "tp @a[team=presentateur] 181 146 -198"
+
+on inventory click:
+    if name of event-inventory is "Sous-Menu Epreuves":  # Vérifie si l'inventaire est le sous-menu Players
+        cancel event  # Empêche les joueurs d’interagir avec les items
+        if index of event-slot is 10:  # Clic sur "Mute les joueurs"
+            send "Vous avez cliqué sur Gestion des joueurs!" to player
+            set {_submenu3} to a new chest inventory with 3 rows named "&e&lGestion des joueurs"
+            set slot 0 of {_submenu3} to cooked beef named "&eSaturation"  # Correction pour ajouter une couleur
+            set slot 1 of {_submenu3} to milk bucket named "&bClear All Effects"
+            set slot 2 of {_submenu3} to pufferfish named "Nausée"
+            set slot 3 of {_submenu3} to netherite sword named "PVP OFF"
+            set slot 4 of {_submenu3} to Potion of Swiftness named "Speed"
+            set slot 5 of {_submenu3} to Potion of Slowness named "Lanteur"
+            set slot 6 of {_submenu3} to golden apple named "Régénération"
+            set slot 7 of {_submenu3} to blaze powder named "Résistance feu"
+            set slot 8 of {_submenu3} to diamond boots named "Saut Amélioré"
+            set slot 13 of {_submenu3} to Potion of Swiftness named "Speed 2"
+            set slot 22 of {_submenu3} to Potion of Swiftness named "Speed 3"
+            set slot 14 of {_submenu3} to Potion of Slowness named "Lanteur II"
+            set slot 23 of {_submenu3} to Potion of Slowness named "Lanteur III "
+            set slot 9 of {_submenu3} to iron sword named "Force"
+            set slot 10 of {_submenu3} to rotten flesh named "Hunger"
+            set slot 11 of {_submenu3} to potion of night vision named "Night vision"
+            open {_submenu3} to player
+        if index of event-slot is 13:
+            send "Vous avez cliqué sur Epreuves en équipes"
+            set {_submenu4} to a new chest inventory with 10 rows named "&e&lEpreuves en équipes"
+            set slot 0 of {_submenu4} to torch named "&e&lLes Torches"
+            set slot 1 of {_submenu4} to white wool named "&e&lLes laines (relais)"
+            set slot 2 of {_submenu4} to crafting table named "&e&lGuess the build"
+            set slot 3 of {_submenu4} to bow named "&e&lTir a l'arc"
+            set slot 4 of {_submenu4} to ladder named "&e&lLe paresseux"
+            set slot 5 of {_submenu4} to red concrete named "&e&lBoxe"
+            set slot 6 of {_submenu4} to boat named "&e&lDuel de bateau"
+            set slot 7 of {_submenu4} to feather named "&e&lAscension"
+            set slot 8 of {_submenu4} to purple glazed terracotta named "&e&lJump en équipe"
+            set slot 18 of {_submenu4} to raw gold block named "&e&lChasse aux trésors"
+            set slot 19 of {_submenu4} to magenta glazed terracotta named "&e&lPuzzle"
+            set slot 20 of {_submenu4} to light block named "&e&lAllume moi"
+            set slot 21 of {_submenu4} to warped fence named "&e&lLe pont"
+            set slot 22 of {_submenu4} to mangrove boat named "&e&lLe bobsleigh"
+            set slot 23 of {_submenu4} to vines named "&e&l Le duel d'escalade"
+            set slot 24 of {_submenu4} to sunflower named "&e&l Le puissance 4"
+            set slot 25 of {_submenu4} to white concrete named "&e&lLe chope le point"
+            set slot 26 of {_submenu4} to sheep spawn egg named "&e&lLes moutons"
+            set slot 36 of {_submenu4} to lever named "&e&lLes Leviers"
+            set slot 37 of {_submenu4} to ladder named "&e&lAttrape Moi"
+            set slot 38 of {_submenu4} to minecart named "&e&lLes Minecart en équipe"
+            set slot 39 of {_submenu4} to heavy weighted pressure plate named "&e&lLe Relais Jump"
+            set slot 40 of {_submenu4} to redstone lamp named "&e&lVise la Lampe"
+
+            loop 9 and 10 and 11 and 12 and 13 and 14 and 15 and 16 and 17 and 27 and 28 and 29 and 30 and 31 and 32 and 33 and 34 and 35 and 46 and 47 and 48 and 49 and 50 and 51 and 52 and 53 and 45:
+                set slot loop-value of {_submenu4} to orange stained glass pane named "TP présentateur"
+            open {_submenu4} to player
+            
+        if index of event-slot is 16:
+            send "vous avez cliqué sur Epreuve individuelles"
+            set {_submenu5} to a new chest inventory with 6 rows named "&e&lEpreuves individuelles"
+            set slot 0 of {_submenu5} to carrot on a stick named "&e&lLa Pêche au cochon"
+            set slot 1 of {_submenu5} to nether star named "&e&lL'étoile"
+            set slot 2 of {_submenu5} to dirt named "&e&lOctogone sans pitié"
+            set slot 3 of {_submenu5} to mangrove boat named "&e&lLe bobsleigh"
+            set slot 4 of {_submenu5} to dirt named "&e&lLe Jump à Elimination"
+            set slot 5 of {_submenu5} to fishing rod named "&e&lLa Pêche"
+            set slot 6 of {_submenu5} to blue glazed terracotta named "&e&lLe Puzzle"
+            set slot 7 of {_submenu5} to brick wall named "&e&lLe Mur"
+            set slot 8 of {_submenu5} to dirt named "&e&lLe Labyrinthe"
+            set slot 18 of {_submenu5} to piglin skull named "&e&lPig Race"
+            set slot 19 of {_submenu5} to Iron Shovel named "&e&lLe Spleef"
+            set slot 20 of {_submenu5} to ladder named "&e&lLe paresseux"
+            set slot 21 of {_submenu5} to bow named "&e&lTir a l'arc"
+            set slot 22 of {_submenu5} to sand named "&e&lLe Sablier"
+            set slot 23 of {_submenu5} to diamond sword named "&e&lLe Parcours du Combattant"
+            set slot 24 of {_submenu5} to hopper named "&e&lDé à Coudre"
+            set slot 25 of {_submenu5} to stick named "&e&lLe Roi de la Colline"
+            set slot 26 of {_submenu5} to minecart named "&e&lLes Minecart"
+            set slot 36 of {_submenu5} to iron bars named "&e&lL'Equilibre"
+            set slot 37 of {_submenu5} to player head named "&e&lVise la tête"
+            set slot 38 of {_submenu5} to dirt  named "&e&lLa Memoire"
+            set slot 39 of {_submenu5} to spruce trapdoor named "&e&lLes Trappes"
+            set slot 40 of {_submenu5} to iron pickaxe named "&e&lCreuse en dessous"
+
+            
+            loop 9 and 10 and 11 and 12 and 13 and 14 and 15 and 16 and 17 and 27 and 28 and 29 and 30 and 31 and 32 and 33 and 34 and 35 and 46 and 47 and 48 and 49 and 50 and 51 and 52 and 53 and 45:
+                set slot loop-value of {_submenu5} to white stained glass pane named "TP présentateur"
+
+            open {_submenu5} to player
+
+
+
+
+on inventory click:
+    if name of event-inventory is "&e&lGestion des joueurs&r":
+        cancel event
+        if index of event-slot is 0:
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+        if index of event-slot is 1:
+            execute console command "effect clear @a"
+        if index of event-slot is 2:
+            execute console command "effect give @a minecraft:nausea 999999 0 true"
+        if index of event-slot is 3:
+            execute console command "effect give @a minecraft:weakness 999999 255 true"
+        if index of event-slot is 4:
+            execute console command "effect give @a minecraft:speed 999999 0 true"
+        if index of event-slot is 5:
+            execute console command "effect give @a minecraft:slowness 999999 0 true"
+        if index of event-slot is 6:
+            execute console command "effect give @a minecraft:regeneration 999999 0 true"
+        if index of event-slot is 7:
+            execute console command "effect give @a minecraft:fire_resistance 999999 0 true"
+        if index of event-slot is 8:
+            execute console command "effect give @a minecraft:jump_boost 999999 1 true"
+        if index of event-slot is 9:
+            execute console command "effect give @a minecraft:strength 999999 0 true"
+        if index of event-slot is 10:
+            execute console command "effect give @a minecraft:hunger 999999 0 true"
+        if index of event-slot is 11:
+            execute console command "effect give @a minecraft:night_vision 999999 0 true"
+        if index of event-slot is 13:
+            execute console command "effect give @a minecraft:speed 999999 1 true"
+        if index of event-slot is 14:
+            execute console command "effect give @a minecraft:slowness 999999 1 true"
+        if index of event-slot is 22:
+            execute console command "effect give @a minecraft:speed 999999 2 true"
+        if index of event-slot is 23:
+            execute console command "effect give @a minecraft:slowness 999999 2 true"
+
+
+on inventory click: 
+    if name of event-inventory is "&e&lEpreuves en équipes":
+        cancel event
+        if index of event-slot is 0:#Torches
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 100 63 -440"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 9:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 100 63 -440"
+        if index of event-slot is 1: #laine
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -165 63 282"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode survival @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 10:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -165 63 282"
+        if index of event-slot is 2:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 82 100 -320"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 11:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 82 100 -320"
+        if index of event-slot is 3:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -54 114 -186"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 12:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -54 114 -186"
+        if index of event-slot is 4:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 193 63 -366"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 13:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 193 63 -366"
+        if index of event-slot is 5:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 193 63 -366"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 14:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 193 63 -366"
+        if index of event-slot is 6:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -75 125 -301"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 15:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -75 125 -301"
+        if index of event-slot is 7:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 144 115 -92"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 16:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 144 115 -92"
+        if index of event-slot is 8:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -379 68 -101"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 17:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -379 68 -101"
+        if index of event-slot is 18:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -23 67 25"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode survival @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 27:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -23 67 25"
+        if index of event-slot is 19:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -168 63 131"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode survival @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 28:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -168 63 131"
+        if index of event-slot is 20:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 159 83 -43"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 29:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 159 83 -43"
+        if index of event-slot is 21:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -405 64 -371"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 30:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -405 64 -371"
+        if index of event-slot is 22:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -441 73 210"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 31:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -441 73 210"
+        if index of event-slot is 23:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 230 99 -183"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 32:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 230 99 -183"
+        if index of event-slot is 24:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -211 100 -342"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 33:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -211 100 -342"
+        if index of event-slot is 25:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -299 63 261"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 34:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -299 63 261"
+        if index of event-slot is 36:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] 190 63 -423"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 36:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 190 63 -423"
+        if index of event-slot is 26:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -299 63 261"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 45:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -299 63 261"
+        if index of event-slot is 37:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] 70 72 70"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 46:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 70 72 70"
+        if index of event-slot is 38:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -102 63 270"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 47:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -102 63 270"
+        if index of event-slot is 39:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -304 79 98"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 48:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -304 79 98"
+        if index of event-slot is 40:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] 106 83 -377"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 49:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 106 83 -377"
+
+
+
+
+
+
+
+
+
+
+
+
+on inventory click: 
+    if name of event-inventory is "&e&lEpreuves individuelles":
+        cancel event
+        if index of event-slot is 0:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] 189 72 -71"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 9:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 189 72 -71"
+
+        if index of event-slot is 1:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -17 64 -430"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 10:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -17 64 -430"
+
+        if index of event-slot is 2:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] 169 67 33"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 11:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 169 67 33"
+        if index of event-slot is 3:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -441 73 210"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 12:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -441 73 210"
+        if index of event-slot is 4:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -367 64 17"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 13:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -367 64 17"
+        if index of event-slot is 5:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -377 64 144"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 14:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -377 64 144"
+        if index of event-slot is 6:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -378 64 -268"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 15:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -378 64 -268"
+        if index of event-slot is 7:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] 230 99 -156"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 16:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 230 99 -156"
+        if index of event-slot is 8:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -87 64 -431"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 17:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -87 64 -431"
+        if index of event-slot is 18:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -142 64 57"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 27:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -142 64 57"
+        if index of event-slot is 25:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] 104 90 -11"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 28:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 104 90 -11"
+        if index of event-slot is 20:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -13 115 -306"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 29:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -13 115 -306"
+        if index of event-slot is 21:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -48 80 -114"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 30:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -48 80 -114"
+        if index of event-slot is 22:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] 311 63 -113"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 31:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] 311 63 -113"
+        if index of event-slot is 23:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -147 63 -426"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 32:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -147 63 -426"
+        if index of event-slot is 24:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative,gamemode=!spectator] -202 79 38"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 33:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -202 79 38"
+        if index of event-slot is 25:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -219 150 -214"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 34:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -219 150 -214"
+        if index of event-slot is 26:
+            send title "CLEAR DANS 30S " to all players
+            wait 200 ticks
+            send title "CLEAR DANS 20S" to all players
+            wait 200 ticks
+            send title "CLEAR DANS 10S" to all players
+            wait 200 ticks
+            execute console command "clear @a[gamemode=!creative,gamemode=!spectator]"
+            wait 20 ticks
+            execute console command "tp @a[gamemode=!creative , gamemode= !spectator ] -149 74 -60"
+            execute console command "effect give @a minecraft:saturation infinite 99 true"
+            execute console command "gamemode adventure @a[gamemode=!creative,gamemode=!spectator]"
+            execute console command "addroletoall mute"
+            execute console command "removeroletoall unmute"
+        if index of event-slot is 35:#TPPrésentateur
+            execute console command "tp @a[team=presentateur] -149 74 -60"

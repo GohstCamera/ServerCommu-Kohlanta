@@ -1,0 +1,7 @@
+command /teamjoinyellow <player>:
+    permission: team.yellow.join
+    permission message: &cVous n'avez pas la permission d'utiliser cette commande.
+    trigger:
+        execute console command "team join yellow %arg-1%"
+        execute console command "lp user %arg-1% parent set yellow"
+        send "&aLe joueur %arg-1% a rejoint l'équipe yellow et son grade a été défini sur &cyellow&a." to player

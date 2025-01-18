@@ -1,0 +1,7 @@
+command /unmute:
+    permission: admin.unmute.toplayer
+    permission message: &cVous n'avez pas la permission d'utiliser cette commande.
+    trigger:
+        execute console command "lp user %player% parent add unmute"
+        execute console command "lp user %player% parent remove mute"
+        send "&aVous êtes maintenant unmute !" to player

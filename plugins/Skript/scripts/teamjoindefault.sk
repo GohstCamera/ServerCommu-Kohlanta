@@ -1,0 +1,7 @@
+command /teamjoindefault <player>:
+    permission: team.default.join
+    permission message: &cVous n'avez pas la permission d'utiliser cette commande.
+    trigger:
+        execute console command "team leave %arg-1%"
+        execute console command "lp user %arg-1% parent set default"
+        send "&aLe joueur %arg-1% a rejoint l'équipe default et son grade a été défini sur &cdefault&a." to player

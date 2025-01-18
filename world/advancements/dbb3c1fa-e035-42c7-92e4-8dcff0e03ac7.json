@@ -1,0 +1,134 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-08-14 19:13:45 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2024-08-14 20:03:53 +0200",
+      "minecraft:ocean": "2024-08-14 19:13:46 +0200",
+      "minecraft:windswept_hills": "2024-08-14 21:30:43 +0200",
+      "minecraft:plains": "2024-08-14 19:13:51 +0200",
+      "minecraft:warm_ocean": "2024-08-14 19:46:24 +0200"
+    },
+    "done": false
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/cherry_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/bamboo_raft": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2024-08-14 19:13:49 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_by_something": "2024-08-14 19:25:47 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato_from_campfire_cooking": {
+    "criteria": {
+      "has_potato": "2024-08-14 19:56:33 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato_from_smoking": {
+    "criteria": {
+      "has_potato": "2024-08-14 19:56:33 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/baked_potato": {
+    "criteria": {
+      "has_potato": "2024-08-14 19:56:33 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_salmon_from_smoking": {
+    "criteria": {
+      "has_salmon": "2024-08-14 19:57:50 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_salmon_from_campfire_cooking": {
+    "criteria": {
+      "has_salmon": "2024-08-14 19:57:50 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/cooked_salmon": {
+    "criteria": {
+      "has_salmon": "2024-08-14 19:57:50 +0200"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "bread": "2024-08-14 19:57:58 +0200",
+      "enchanted_golden_apple": "2024-08-14 21:24:08 +0200"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2024-08-14 19:57:58 +0200"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/mojang_banner_pattern": {
+    "criteria": {
+      "has_enchanted_golden_apple": "2024-08-14 21:24:06 +0200"
+    },
+    "done": true
+  },
+  "DataVersion": 3839
+}

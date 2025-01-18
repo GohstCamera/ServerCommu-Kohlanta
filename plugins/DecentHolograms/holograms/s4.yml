@@ -1,0 +1,32 @@
+location: world:-55.000:68.000:522.000
+enabled: true
+display-range: 48
+update-range: 48
+update-interval: 20
+facing: 0.0
+down-origin: false
+pages:
+- lines:
+  - content: '&f=== &5Classement S4 &f==='
+    height: 0.3
+  - content: '#FFC0001&f. &#DAA520Ossoan26'
+    height: 0.3
+  - content: '#FFC0002&f. &#C0C0C0Golden_Death_'
+    height: 0.3
+  - content: '#FFC0003&f. &#A8703CSerereee'
+    height: 0.3
+  - content: '#FFC0004&f. &fNiamoR974'
+    height: 0.3
+  - content: '#FFC0005&f. &fLoulichee'
+    height: 0.3
+  - content: '#FFC0006&f. &fHenrI555556'
+    height: 0.3
+  - content: '#FFC0007&f. &fSeth_Kirigaya'
+    height: 0.3
+  - content: '#FFC0008&f. &fThe_Nitro_'
+    height: 0.3
+  - content: '#FFC0009&f. &fQilinGM'
+    height: 0.3
+  - content: '#FFC00010&f. &fLawice2'
+    height: 0.3
+  actions: {}

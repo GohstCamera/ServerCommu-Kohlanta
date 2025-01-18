@@ -1,0 +1,10 @@
+command /redtp :
+    permission: team.red.join
+    permission message: &cVous n'avez pas la permission d'utiliser cette commande.
+  
+    trigger:
+        execute console command "tp @a[gamemode=!creative,gamemode=!spectator,team=yellow] 458 63 -176"
+        execute console command "gamemode survival @a[gamemode=!creative,gamemode=!spectator,team=yellow]"
+        execute console command "removeroletoall mute"
+        execute console command "addroletoall unmute"
+        send "&aLes joueurs a rejoint leurs camps" to player
