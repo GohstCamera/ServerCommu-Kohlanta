@@ -17,7 +17,7 @@ jobs:
           username: gohstcamera.541eb4c2
           server: 9042.mystrator.com
           port: 2022
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SFTP_PASSWORD }}  # Utilisation du mot de passe stocké dans les secrets
           local_path: ./*
           remote_path: /var/www
           args: '-o ConnectTimeout=5'
