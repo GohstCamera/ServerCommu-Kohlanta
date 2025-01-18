@@ -23,7 +23,7 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: gohstcamera.541eb4c2
+          username: gohstcamera.541eb4c2:5830Fri458Apr-MSR
           server: 9042.mystrator.com
           port: 2022 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
