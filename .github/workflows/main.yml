@@ -26,7 +26,7 @@ jobs:
           username: gohstcamera.541eb4c2
           server: 9042.mystrator.com
           port: 2022 # default is 22
-          ssh_private_key: 5830Fri458Apr-MSR
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
  
           
           # will put all file under this path
