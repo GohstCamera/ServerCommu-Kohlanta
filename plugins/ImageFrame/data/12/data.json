@@ -1,0 +1,174 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 12,
+  "name": "BannièrePvP1.2",
+  "url": "https://image.noelshack.com/fichiers/2025/05/5/1738361106-banni-re-pvp-1-2.png",
+  "width": 8,
+  "height": 4,
+  "ditheringType": "nearest-color",
+  "creator": "5280a3d2-e7d7-488e-aea7-9df758603ffb",
+  "hasAccess": {},
+  "creationTime": 1738361140711,
+  "mapdata": [
+    {
+      "mapid": 236,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 237,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 238,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 239,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 240,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 241,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 242,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 243,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 244,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 245,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 246,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 247,
+      "image": "11.png",
+      "markers": []
+    },
+    {
+      "mapid": 248,
+      "image": "12.png",
+      "markers": []
+    },
+    {
+      "mapid": 249,
+      "image": "13.png",
+      "markers": []
+    },
+    {
+      "mapid": 250,
+      "image": "14.png",
+      "markers": []
+    },
+    {
+      "mapid": 251,
+      "image": "15.png",
+      "markers": []
+    },
+    {
+      "mapid": 252,
+      "image": "16.png",
+      "markers": []
+    },
+    {
+      "mapid": 253,
+      "image": "17.png",
+      "markers": []
+    },
+    {
+      "mapid": 254,
+      "image": "18.png",
+      "markers": []
+    },
+    {
+      "mapid": 255,
+      "image": "19.png",
+      "markers": []
+    },
+    {
+      "mapid": 256,
+      "image": "20.png",
+      "markers": []
+    },
+    {
+      "mapid": 257,
+      "image": "21.png",
+      "markers": []
+    },
+    {
+      "mapid": 258,
+      "image": "22.png",
+      "markers": []
+    },
+    {
+      "mapid": 259,
+      "image": "23.png",
+      "markers": []
+    },
+    {
+      "mapid": 260,
+      "image": "24.png",
+      "markers": []
+    },
+    {
+      "mapid": 261,
+      "image": "25.png",
+      "markers": []
+    },
+    {
+      "mapid": 262,
+      "image": "26.png",
+      "markers": []
+    },
+    {
+      "mapid": 263,
+      "image": "27.png",
+      "markers": []
+    },
+    {
+      "mapid": 264,
+      "image": "28.png",
+      "markers": []
+    },
+    {
+      "mapid": 265,
+      "image": "29.png",
+      "markers": []
+    },
+    {
+      "mapid": 266,
+      "image": "30.png",
+      "markers": []
+    },
+    {
+      "mapid": 267,
+      "image": "31.png",
+      "markers": []
+    }
+  ]
+}

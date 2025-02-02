@@ -1,0 +1,59 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 15,
+  "name": "LogoPvP1.2",
+  "url": "https://image.noelshack.com/fichiers/2025/05/6/1738405148-pvp-1-1.png",
+  "width": 3,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "5280a3d2-e7d7-488e-aea7-9df758603ffb",
+  "hasAccess": {},
+  "creationTime": 1738405227445,
+  "mapdata": [
+    {
+      "mapid": 288,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 289,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 290,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 291,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 292,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 293,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 294,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 295,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 296,
+      "image": "8.png",
+      "markers": []
+    }
+  ]
+}

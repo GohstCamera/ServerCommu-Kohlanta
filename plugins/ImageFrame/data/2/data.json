@@ -1,0 +1,134 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 2,
+  "name": "LogoPvP1",
+  "url": "https://image.noelshack.com/fichiers/2025/05/5/1738357435-pvp-1-3.png",
+  "width": 8,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "5280a3d2-e7d7-488e-aea7-9df758603ffb",
+  "hasAccess": {},
+  "creationTime": 1738357449011,
+  "mapdata": [
+    {
+      "mapid": 14,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 15,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 16,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 17,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 18,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 19,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 20,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 21,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 22,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 23,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 24,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 25,
+      "image": "11.png",
+      "markers": []
+    },
+    {
+      "mapid": 26,
+      "image": "12.png",
+      "markers": []
+    },
+    {
+      "mapid": 27,
+      "image": "13.png",
+      "markers": []
+    },
+    {
+      "mapid": 28,
+      "image": "14.png",
+      "markers": []
+    },
+    {
+      "mapid": 29,
+      "image": "15.png",
+      "markers": []
+    },
+    {
+      "mapid": 30,
+      "image": "16.png",
+      "markers": []
+    },
+    {
+      "mapid": 31,
+      "image": "17.png",
+      "markers": []
+    },
+    {
+      "mapid": 32,
+      "image": "18.png",
+      "markers": []
+    },
+    {
+      "mapid": 33,
+      "image": "19.png",
+      "markers": []
+    },
+    {
+      "mapid": 34,
+      "image": "20.png",
+      "markers": []
+    },
+    {
+      "mapid": 35,
+      "image": "21.png",
+      "markers": []
+    },
+    {
+      "mapid": 36,
+      "image": "22.png",
+      "markers": []
+    },
+    {
+      "mapid": 37,
+      "image": "23.png",
+      "markers": []
+    }
+  ]
+}
