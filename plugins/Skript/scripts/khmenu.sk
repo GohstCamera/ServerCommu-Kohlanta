@@ -59,16 +59,17 @@ on inventory click:
             set slot 4 of {_submenu6} to book named "&e&lLe Conseil"
             set slot 5 of {_submenu6} to end rod named "&e&lLes poteaux"
             set slot 6 of {_submenu6} to compass named "&e&lL'orientation"
-            set slot 7 of {_submenu6} to wool named "&e&lLes Portraits" with data value 5
+            set slot 7 of {_submenu6} to lime wool named "&e&lLes Portraits"
             set slot 8 of {_submenu6} to enchanted book named "&e&lLe Conseil Final"
             set slot 9 of {_submenu6} to red bed named "&e&lL'infirmerie"
             set slot 10 of {_submenu6} to bread named "&e&lLe Marchï¿½"
             set slot 11 of {_submenu6} to cherry boat with chest named "&e&lLe Bateau Confort"
             set slot 12 of {_submenu6} to dirt named "&e&lMaison du jury final"
             open {_submenu6} to player
-	    if index of event-slot is 20:
-            send "vous avez cliqué sur l'administration"
-   		set {_submenu7} to a new chest inventory with 10 rows named "ADMINISTRATION"
+            if index of event-slot is 20:
+                send "vous avez cliqué sur l'administration"
+                set {_submenu7} to a new chest inventory with 10 rows named "ADMINISTRATION"
+    
 #Gestion du Sous-Menu Players
 on inventory click:
     if name of event-inventory is "Sous-Menu Players":  # Vï¿½rifie si l'inventaire est le sous-menu Players
@@ -187,7 +188,7 @@ on inventory click:
             set slot 3 of {_submenu4} to bow named "&e&lTir a l'arc"
             set slot 4 of {_submenu4} to ladder named "&e&lLe paresseux"
             set slot 5 of {_submenu4} to red concrete named "&e&lBoxe"
-            set slot 6 of {_submenu4} to boat named "&e&lDuel de bateau"
+            set slot 6 of {_submenu4} to oak boat named "&e&lDuel de bateau"
             set slot 7 of {_submenu4} to feather named "&e&lAscension"
             set slot 8 of {_submenu4} to purple glazed terracotta named "&e&lJump en ï¿½quipe"
             set slot 18 of {_submenu4} to raw gold block named "&e&lChasse aux trï¿½sors"
@@ -221,7 +222,7 @@ on inventory click:
             set slot 6 of {_submenu5} to blue glazed terracotta named "&e&lLe Puzzle"
             set slot 7 of {_submenu5} to brick wall named "&e&lLe Mur"
             set slot 8 of {_submenu5} to dirt named "&e&lLe Labyrinthe"
-            set slot 18 of {_submenu5} to piglin skull named "&e&lPig Race"
+            set slot 18 of {_submenu5} to player head named "&e&lPig Race"
             set slot 19 of {_submenu5} to Iron Shovel named "&e&lLe Spleef"
             set slot 20 of {_submenu5} to ladder named "&e&lLe paresseux"
             set slot 21 of {_submenu5} to bow named "&e&lTir a l'arc"
