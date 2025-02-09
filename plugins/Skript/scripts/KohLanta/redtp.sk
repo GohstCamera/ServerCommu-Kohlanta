@@ -1,5 +1,5 @@
 command /redtp :
-    permission: team.red.join
+    permission: team.red.tp
     permission message: &cVous n'avez pas la permission d'utiliser cette commande.
   
     trigger:

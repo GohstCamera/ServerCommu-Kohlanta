@@ -1,30 +1,30 @@
-command /games:
+command /server:
     permission: serveur.menu
     permission message: "&cVous n'avez pas la permission d'utiliser cette commande."
     trigger:
-        open chest inventory with 3 rows named "&6&lSélection du Mode de Jeu" to player
+        open chest inventory with 3 rows named "&6&lSelection du Mode de Jeu" to player
         wait 1 tick
 
-        # Koh-Lanta 🌴 (Feu de camp)
+        # Koh-Lanta (Feu de camp)
         set slot 10 of player's current inventory to campfire named "&e&lKoh-Lanta" with lore "&7Clique pour rejoindre"
 
-        # Ninja Warrior 🏃 (Barrière de fer pour l'obstacle)
+        # Ninja Warrior (Barriere de fer pour l'obstacle)
         set slot 12 of player's current inventory to iron bars named "&b&lNinja Warrior" with lore "&7Clique pour rejoindre"
 
-        # Tournois PVP ⚔ (Épée en diamant)
+        # Tournois PVP (Epee en diamant)
         set slot 14 of player's current inventory to diamond sword named "&c&lTournois PVP" with lore "&7Clique pour rejoindre"
 
-        # Hickabrain 🧠 (Tête de joueur)
+        # Hickabrain (Tete de joueur)
         set slot 16 of player's current inventory to player head named "&d&lHickabrain" with lore "&7Clique pour rejoindre"
 
-        # The Platform 🏗 (Bloc de pierre pour la plateforme)
+        # The Platform (Bloc de pierre pour la plateforme)
         set slot 20 of player's current inventory to stone named "&7&lThe Platform" with lore "&7Clique pour rejoindre"
 
-        # Retour au Lobby 🏠 (Lit rouge)
+        # Retour au Lobby (Lit rouge)
         set slot 24 of player's current inventory to red bed named "&6&lRetour au Lobby" with lore "&7Clique pour revenir au lobby"
 
 on inventory click:
-    if name of event-inventory is "&6&lSélection du Mode de Jeu":
+    if name of event-inventory is "&6&lSelection du Mode de Jeu":
         cancel event
         if index of event-slot is 10:
             # Ajoute ici la commande pour rejoindre Koh-Lanta

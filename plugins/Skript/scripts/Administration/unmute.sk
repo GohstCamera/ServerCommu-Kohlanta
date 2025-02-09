@@ -4,4 +4,4 @@ command /unmute:
     trigger:
         execute console command "lp user %player% parent add unmute"
         execute console command "lp user %player% parent remove mute"
-        send "&aVous êtes maintenant unmute !" to player
+        send "&aVous etes maintenant unmute !" to player

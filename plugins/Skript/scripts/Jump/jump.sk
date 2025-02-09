@@ -1,0 +1,130 @@
+command /jumpmenu:
+    permission: jumpmenu.open
+    permission message: "Tu n'as pas la permission d'ouvrir ce menu."
+    trigger:
+        open chest inventory with 6 rows named "&6&lChoisis ton parcours de Jump" to player
+        wait 1 tick
+
+        # Jump Très Facile (Pierre)
+        set slot 10 of player's current inventory to stone named "&a&lJump Très Facile" with lore "&7Un premier saut simple."
+
+        # Jump Facile (Bloc d'herbe)
+        set slot 12 of player's current inventory to grass_block named "&2&lJump Facile" with lore "&7Un parcours facile, juste pour démarrer."
+
+        # Jump Moyen (Terre)
+        set slot 14 of player's current inventory to dirt named "&6&lJump Moyen" with lore "&7Un peu plus difficile, mais faisable."
+
+        # Jump Difficile (Pierre taillée)
+        set slot 16 of player's current inventory to stone_slab named "&c&lJump Difficile" with lore "&7Le parcours commence à devenir difficile."
+
+        # Jump Très Difficile (Brique de pierre)
+        set slot 18 of player's current inventory to stone_bricks with display name "&4&lJump Très Difficile" with lore "&7Difficulté accrue, prépare-toi à sauter."
+
+        # Jump Extrême (Sable)
+        set slot 20 of player's current inventory to sandstone with display name "&e&lJump Extrême" with lore "&7Un vrai défi, avec de grands sauts."
+
+        # Jump Infernal (Obsidienne)
+        set slot 22 of player's current inventory to obsidian with display name "&8&lJump Infernal" with lore "&7Une grande difficulté, l'infernal attend."
+
+        # Jump Apocalypse (Bedrock)
+        set slot 24 of player's current inventory to bedrock with display name "&7&lJump Apocalypse" with lore "&7Seuls les plus forts survivront ici."
+
+        # Jump Très Extrême (Brique du Nether)
+        set slot 26 of player's current inventory to nether_brick with display name "&4&lJump Très Extrême" with lore "&7Prépare-toi à un challenge de folie."
+
+        # Jump Démoniaque (Poudre de Blaze)
+        set slot 28 of player's current inventory to blaze_powder with display name "&c&lJump Démoniaque" with lore "&7C'est un saut pour les plus braves."
+
+        # Jump Magique (Livre enchanté)
+        set slot 30 of player's current inventory to enchanted_book with display name "&d&lJump Magique" with lore "&7Un défi surprenant, imprévisible."
+
+        # Jump Héroïque (Bloc d'or)
+        set slot 32 of player's current inventory to gold_block with display name "&6&lJump Héroïque" with lore "&7Le saut ultime pour les héros."
+
+        # Jump Léger (Verre)
+        set slot 34 of player's current inventory to glass with display name "&b&lJump Léger" with lore "&7Un saut rapide, pas de quoi paniquer."
+
+        # Jump Rétro (Argile)
+        set slot 36 of player's current inventory to clay with display name "&8&lJump Rétro" with lore "&7Un défi nostalgique."
+
+        # Jump Cauchemar (Obsidienne)
+        set slot 38 of player's current inventory to obsidian with display name "&5&lJump Cauchemar" with lore "&7Un parcours qui te hantera."
+
+        # Jump Improbable (Sable d'âme)
+        set slot 40 of player's current inventory to soul_sand with display name "&4&lJump Improbable" with lore "&7Il y a peu de chance de réussite ici."
+
+        # Jump Fantastique (Bloc de diamant)
+        set slot 42 of player's current inventory to diamond_block with display name "&b&lJump Fantastique" with lore "&7Le défi te semble irréel."
+
+        # Jump Ultime (Bloc d'émeraude)
+        set slot 44 of player's current inventory to emerald_block with display name "&a&lJump Ultime" with lore "&7Seuls les meilleurs peuvent réussir."
+
+        # Jump Impossible (Étoile du Nether)
+        set slot 46 of player's current inventory to nether_star with display name "&5&lJump Impossible" with lore "&7Impossible, mais essaie quand même."
+
+        # Jump Suprême (Tête de dragon)
+        set slot 48 of player's current inventory to skull of player named "&6&lJump Suprême" with lore "&7Le défi ultime, le saut de la fin."
+
+on inventory click:
+    if name of event-inventory is "&6&lChoisis ton parcours de Jump":
+        cancel event
+        if index of event-slot is 10:
+            execute console command "warp jump_1"
+            send "Tu as choisi le parcours Jump Très Facile !" to player
+        if index of event-slot is 12:
+            execute console command "warp jump_2"
+            send "Tu as choisi le parcours Jump Facile !" to player
+        if index of event-slot is 14:
+            execute console command "warp jump_3"
+            send "Tu as choisi le parcours Jump Moyen !" to player
+        if index of event-slot is 16:
+            execute console command "warp jump_4"
+            send "Tu as choisi le parcours Jump Difficile !" to player
+        if index of event-slot is 18:
+            execute console command "warp jump_5"
+            send "Tu as choisi le parcours Jump Très Difficile !" to player
+        if index of event-slot is 20:
+            execute console command "warp jump_6"
+            send "Tu as choisi le parcours Jump Extrême !" to player
+        if index of event-slot is 22:
+            execute console command "warp jump_7"
+            send "Tu as choisi le parcours Jump Infernal !" to player
+        if index of event-slot is 24:
+            execute console command "warp jump_8"
+            send "Tu as choisi le parcours Jump Apocalypse !" to player
+        if index of event-slot is 26:
+            execute console command "warp jump_9"
+            send "Tu as choisi le parcours Jump Très Extrême !" to player
+        if index of event-slot is 28:
+            execute console command "warp jump_10"
+            send "Tu as choisi le parcours Jump Démoniaque !" to player
+        if index of event-slot is 30:
+            execute console command "warp jump_11"
+            send "Tu as choisi le parcours Jump Magique !" to player
+        if index of event-slot is 32:
+            execute console command "warp jump_12"
+            send "Tu as choisi le parcours Jump Héroïque !" to player
+        if index of event-slot is 34:
+            execute console command "warp jump_13"
+            send "Tu as choisi le parcours Jump Léger !" to player
+        if index of event-slot is 36:
+            execute console command "warp jump_14"
+            send "Tu as choisi le parcours Jump Rétro !" to player
+        if index of event-slot is 38:
+            execute console command "warp jump_15"
+            send "Tu as choisi le parcours Jump Cauchemar !" to player
+        if index of event-slot is 40:
+            execute console command "warp jump_16"
+            send "Tu as choisi le parcours Jump Improbable !" to player
+        if index of event-slot is 42:
+            execute console command "warp jump_17"
+            send "Tu as choisi le parcours Jump Fantastique !" to player
+        if index of event-slot is 44:
+            execute console command "warp jump_18"
+            send "Tu as choisi le parcours Jump Ultime !" to player
+        if index of event-slot is 46:
+            execute console command "warp jump_19"
+            send "Tu as choisi le parcours Jump Impossible !" to player
+        if index of event-slot is 48:
+            execute console command "warp jump_20"
+            send "Tu as choisi le parcours Jump Suprême !" to player

@@ -3,7 +3,7 @@ command /khmenu:
     trigger:
         set {_menu} to a new chest inventory with 3 rows named "Menu Principal"
 
-        # Configuration des cases spï¿½cifiques
+        # Configuration des cases spécifiques
         set slot 0 of {_menu} to black stained glass pane named " "
         set slot 1 of {_menu} to black stained glass pane named " "
         set slot 2 of {_menu} to black stained glass pane named " "
@@ -38,11 +38,11 @@ command /khmenu:
 
 # Gestion du clic dans l'inventaire
 on inventory click:
-    if name of event-inventory is "Menu Principal":  # Vï¿½rifie si l'inventaire est celui du menu principal
-        cancel event  # Empï¿½che toute action dans l'inventaire du menu (comme dï¿½placer les items)
+    if name of event-inventory is "Menu Principal":  # Verifie si l'inventaire est celui du menu principal
+        cancel event  # Empeche toute action dans l'inventaire du menu (comme deplacer les items)
 
         if index of event-slot is 10:  # Si on clique sur le bouton du menu principal
-            send "Vous avez cliquï¿½ sur le Players." to player
+            send "Vous avez clique sur le Players." to player
             # Ouvre le premier sous-menu
             set {_submenu1} to a new chest inventory with 3 rows named "Sous-Menu Players"
             set slot 10 of {_submenu1} to player head named "&e&lMutes les joueurs&r"
@@ -50,11 +50,11 @@ on inventory click:
             set slot 16 of {_submenu1} to player head named "&e&lTP les joueurs a leurs iles respectives&r"
             open {_submenu1} to player
         if index of event-slot is 13:
-            send "vous avez cliquï¿½ sur tp"
+            send "vous avez clique sur tp"
             set {_submenu6} to a new chest inventory with 3 rows named "TP"
             set slot 0 of {_submenu6} to red wool named "&e&lRouge"
             set slot 1 of {_submenu6} to yellow wool named "&e&lJaune"
-            set slot 2 of {_submenu6} to black wool named "&e&lIle des Hï¿½ros"
+            set slot 2 of {_submenu6} to black wool named "&e&lIle des Heros"
             set slot 3 of {_submenu6} to black wool named "&e&lIle de l'Exil"
             set slot 4 of {_submenu6} to book named "&e&lLe Conseil"
             set slot 5 of {_submenu6} to end rod named "&e&lLes poteaux"
@@ -62,39 +62,39 @@ on inventory click:
             set slot 7 of {_submenu6} to lime wool named "&e&lLes Portraits"
             set slot 8 of {_submenu6} to enchanted book named "&e&lLe Conseil Final"
             set slot 9 of {_submenu6} to red bed named "&e&lL'infirmerie"
-            set slot 10 of {_submenu6} to bread named "&e&lLe Marchï¿½"
+            set slot 10 of {_submenu6} to bread named "&e&lLe Marche"
             set slot 11 of {_submenu6} to cherry boat with chest named "&e&lLe Bateau Confort"
             set slot 12 of {_submenu6} to dirt named "&e&lMaison du jury final"
             open {_submenu6} to player
             if index of event-slot is 20:
-                send "vous avez cliqué sur l'administration"
+                send "vous avez clique sur l'administration"
                 set {_submenu7} to a new chest inventory with 10 rows named "ADMINISTRATION"
     
 #Gestion du Sous-Menu Players
 on inventory click:
-    if name of event-inventory is "Sous-Menu Players":  # Vï¿½rifie si l'inventaire est le sous-menu Players
-        cancel event  # Empï¿½che les joueurs dï¿½interagir avec les items
+    if name of event-inventory is "Sous-Menu Players":  # Verifie si l'inventaire est le sous-menu Players
+        cancel event  # Empeche les joueurs d'interagir avec les items
         if index of event-slot is 10:  # Clic sur "Mute les joueurs"
-            send "Vous avez cliqué sur Mute les joueurs !" to player
+            send "Vous avez clique sur Mute les joueurs !" to player
             execute console command "removeroletoall unmute"
             execute console command "addroletoall mute"
 
         if index of event-slot is 13:  # Clic sur "Unmute les joueurs"
-            send "Vous avez cliquï¿½ sur Unmute les joueurs !" to player
+            send "Vous avez clique sur Unmute les joueurs !" to player
             execute console command "removeroletoall mute"
             execute console command "addroletoall unmute"
 
-        if index of event-slot is 16:  # Clic pour tï¿½lï¿½porter les joueurs ï¿½ leurs ï¿½les respectives
+        if index of event-slot is 16:  # Clic pour teleporter les joueurs a leurs iles respectives
             execute console command "redtp"
             execute console command "yellowtp"
             send "&aTous les joueurs ont rejoint leurs camps."
 
 on inventory click:
-    if name of event-inventory is "Menu Principal":  # Vï¿½rifie si l'inventaire est celui du menu principal
-        cancel event  # Empï¿½che toute action dans l'inventaire du menu (comme dï¿½placer les items)
+    if name of event-inventory is "Menu Principal":  # Verifie si l'inventaire est celui du menu principal
+        cancel event  # Empêche toute action dans l'inventaire du menu (comme deplacer les items)
 
         if index of event-slot is 16:  # Si on clique sur le bouton du menu principal
-            send "Vous avez cliquï¿½ sur le Players." to player
+            send "Vous avez clique sur le Players." to player
             # Ouvre le premier sous-menu
             set {_submenu2} to a new chest inventory with 3 rows named "Sous-Menu Epreuves"
 
@@ -123,9 +123,10 @@ on inventory click:
             set slot 18 of {_submenu2} to white stained glass pane named " " 
             set slot 19 of {_submenu2} to white stained glass pane named " "
             set slot 20 of {_submenu2} to white stained glass pane named " "
-            set slot 13 of {_submenu2} to orange wool named "&e&lEpreuves en ï¿½quipes&r"
+            set slot 13 of {_submenu2} to orange wool named "&e&lEpreuves en equipes&r"
             set slot 16 of {_submenu2} to white wool named "&e&lEpreuves individuelles&r"
             open {_submenu2} to player
+
 on inventory click:
     if name of event-inventory is "TP":
         cancel event
@@ -157,31 +158,31 @@ on inventory click:
             execute console command "tp @a[team=presentateur] 181 146 -198"
 
 on inventory click:
-    if name of event-inventory is "Sous-Menu Epreuves":  # Vï¿½rifie si l'inventaire est le sous-menu Players
-        cancel event  # Empï¿½che les joueurs dï¿½interagir avec les items
+    if name of event-inventory is "Sous-Menu Epreuves":  # Verifie si l'inventaire est le sous-menu Players
+        cancel event  # Empeche les joueurs d'interagir avec les items
         if index of event-slot is 10:  # Clic sur "Mute les joueurs"
-            send "Vous avez cliquï¿½ sur Gestion des joueurs!" to player
+            send "Vous avez clique sur Gestion des joueurs!" to player
             set {_submenu3} to a new chest inventory with 3 rows named "&e&lGestion des joueurs"
             set slot 0 of {_submenu3} to cooked beef named "&eSaturation"  # Correction pour ajouter une couleur
             set slot 1 of {_submenu3} to milk bucket named "&bClear All Effects"
-            set slot 2 of {_submenu3} to pufferfish named "Nausï¿½e"
+            set slot 2 of {_submenu3} to pufferfish named "Nausee"
             set slot 3 of {_submenu3} to netherite sword named "PVP OFF"
             set slot 4 of {_submenu3} to Potion of Swiftness named "Speed"
-            set slot 5 of {_submenu3} to Potion of Slowness named "Lanteur"
-            set slot 6 of {_submenu3} to golden apple named "Rï¿½gï¿½nï¿½ration"
-            set slot 7 of {_submenu3} to blaze powder named "Rï¿½sistance feu"
-            set slot 8 of {_submenu3} to diamond boots named "Saut Amï¿½liorï¿½"
+            set slot 5 of {_submenu3} to Potion of Slowness named "Lenteur"
+            set slot 6 of {_submenu3} to golden apple named "Regeneration"
+            set slot 7 of {_submenu3} to blaze powder named "Resistance feu"
+            set slot 8 of {_submenu3} to diamond boots named "Saut Ameliore"
             set slot 13 of {_submenu3} to Potion of Swiftness named "Speed 2"
             set slot 22 of {_submenu3} to Potion of Swiftness named "Speed 3"
-            set slot 14 of {_submenu3} to Potion of Slowness named "Lanteur II"
-            set slot 23 of {_submenu3} to Potion of Slowness named "Lanteur III "
+            set slot 14 of {_submenu3} to Potion of Slowness named "Lenteur II"
+            set slot 23 of {_submenu3} to Potion of Slowness named "Lenteur III"
             set slot 9 of {_submenu3} to iron sword named "Force"
             set slot 10 of {_submenu3} to rotten flesh named "Hunger"
             set slot 11 of {_submenu3} to potion of night vision named "Night vision"
             open {_submenu3} to player
         if index of event-slot is 13:
-            send "Vous avez cliquï¿½ sur Epreuves en ï¿½quipes"
-            set {_submenu4} to a new chest inventory with 10 rows named "&e&lEpreuves en ï¿½quipes"
+            send "Vous avez clique sur Epreuves en equipes"
+            set {_submenu4} to a new chest inventory with 10 rows named "&e&lEpreuves en equipes"
             set slot 0 of {_submenu4} to torch named "&e&lLes Torches"
             set slot 1 of {_submenu4} to white wool named "&e&lLes laines (relais)"
             set slot 2 of {_submenu4} to crafting table named "&e&lGuess the build"
@@ -190,8 +191,8 @@ on inventory click:
             set slot 5 of {_submenu4} to red concrete named "&e&lBoxe"
             set slot 6 of {_submenu4} to oak boat named "&e&lDuel de bateau"
             set slot 7 of {_submenu4} to feather named "&e&lAscension"
-            set slot 8 of {_submenu4} to purple glazed terracotta named "&e&lJump en ï¿½quipe"
-            set slot 18 of {_submenu4} to raw gold block named "&e&lChasse aux trï¿½sors"
+            set slot 8 of {_submenu4} to purple glazed terracotta named "&e&lJump en equipe"
+            set slot 18 of {_submenu4} to raw gold block named "&e&lChasse aux tresors"
             set slot 19 of {_submenu4} to magenta glazed terracotta named "&e&lPuzzle"
             set slot 20 of {_submenu4} to light block named "&e&lAllume moi"
             set slot 21 of {_submenu4} to warped fence named "&e&lLe pont"
@@ -202,50 +203,46 @@ on inventory click:
             set slot 26 of {_submenu4} to sheep spawn egg named "&e&lLes moutons"
             set slot 36 of {_submenu4} to lever named "&e&lLes Leviers"
             set slot 37 of {_submenu4} to ladder named "&e&lAttrape Moi"
-            set slot 38 of {_submenu4} to minecart named "&e&lLes Minecart en ï¿½quipe"
+            set slot 38 of {_submenu4} to minecart named "&e&lLes Minecart en equipe"
             set slot 39 of {_submenu4} to heavy weighted pressure plate named "&e&lLe Relais Jump"
             set slot 40 of {_submenu4} to redstone lamp named "&e&lVise la Lampe"
 
             loop 9 and 10 and 11 and 12 and 13 and 14 and 15 and 16 and 17 and 27 and 28 and 29 and 30 and 31 and 32 and 33 and 34 and 35 and 46 and 47 and 48 and 49 and 50 and 51 and 52 and 53 and 45:
-                set slot loop-value of {_submenu4} to orange stained glass pane named "TP prï¿½sentateur"
+                set slot loop-value of {_submenu4} to orange stained glass pane named "TP presentateur"
             open {_submenu4} to player
             
-        if index of event-slot is 16:
-            send "vous avez cliquï¿½ sur Epreuve individuelles"
-            set {_submenu5} to a new chest inventory with 6 rows named "&e&lEpreuves individuelles"
-            set slot 0 of {_submenu5} to carrot on a stick named "&e&lLa Pï¿½che au cochon"
-            set slot 1 of {_submenu5} to nether star named "&e&lL'ï¿½toile"
-            set slot 2 of {_submenu5} to dirt named "&e&lOctogone sans pitiï¿½"
-            set slot 3 of {_submenu5} to mangrove boat named "&e&lLe bobsleigh"
-            set slot 4 of {_submenu5} to dirt named "&e&lLe Jump ï¿½ Elimination"
-            set slot 5 of {_submenu5} to fishing rod named "&e&lLa Pï¿½che"
-            set slot 6 of {_submenu5} to blue glazed terracotta named "&e&lLe Puzzle"
-            set slot 7 of {_submenu5} to brick wall named "&e&lLe Mur"
-            set slot 8 of {_submenu5} to dirt named "&e&lLe Labyrinthe"
-            set slot 18 of {_submenu5} to player head named "&e&lPig Race"
-            set slot 19 of {_submenu5} to Iron Shovel named "&e&lLe Spleef"
-            set slot 20 of {_submenu5} to ladder named "&e&lLe paresseux"
-            set slot 21 of {_submenu5} to bow named "&e&lTir a l'arc"
-            set slot 22 of {_submenu5} to sand named "&e&lLe Sablier"
-            set slot 23 of {_submenu5} to diamond sword named "&e&lLe Parcours du Combattant"
-            set slot 24 of {_submenu5} to hopper named "&e&lDï¿½ ï¿½ Coudre"
-            set slot 25 of {_submenu5} to stick named "&e&lLe Roi de la Colline"
-            set slot 26 of {_submenu5} to minecart named "&e&lLes Minecart"
-            set slot 36 of {_submenu5} to iron bars named "&e&lL'Equilibre"
-            set slot 37 of {_submenu5} to player head named "&e&lVise la tï¿½te"
-            set slot 38 of {_submenu5} to dirt  named "&e&lLa Memoire"
-            set slot 39 of {_submenu5} to spruce trapdoor named "&e&lLes Trappes"
-            set slot 40 of {_submenu5} to iron pickaxe named "&e&lCreuse en dessous"
-
+            if index of event-slot is 16:
+                send "vous avez clique sur Epreuve individuelles"
+                set {_submenu5} to a new chest inventory with 6 rows named "&e&lEpreuves individuelles"
+                set slot 0 of {_submenu5} to carrot on a stick named "&e&lLa Peche au cochon"
+                set slot 1 of {_submenu5} to nether star named "&e&lL'Etoile"
+                set slot 2 of {_submenu5} to dirt named "&e&lOctogone sans pitié"
+                set slot 3 of {_submenu5} to mangrove boat named "&e&lLe bobsleigh"
+                set slot 4 of {_submenu5} to dirt named "&e&lLe Jump a Elimination"
+                set slot 5 of {_submenu5} to fishing rod named "&e&lLa Peche"
+                set slot 6 of {_submenu5} to blue glazed terracotta named "&e&lLe Puzzle"
+                set slot 7 of {_submenu5} to brick wall named "&e&lLe Mur"
+                set slot 8 of {_submenu5} to dirt named "&e&lLe Labyrinthe"
+                set slot 18 of {_submenu5} to player head named "&e&lPig Race"
+                set slot 19 of {_submenu5} to Iron Shovel named "&e&lLe Spleef"
+                set slot 20 of {_submenu5} to ladder named "&e&lLe paresseux"
+                set slot 21 of {_submenu5} to bow named "&e&lTir a l'arc"
+                set slot 22 of {_submenu5} to sand named "&e&lLe Sablier"
+                set slot 23 of {_submenu5} to diamond sword named "&e&lLe Parcours du Combattant"
+                set slot 24 of {_submenu5} to hopper named "&e&lDe Coudre"
+                set slot 25 of {_submenu5} to stick named "&e&lLe Roi de la Colline"
+                set slot 26 of {_submenu5} to minecart named "&e&lLes Minecart"
+                set slot 36 of {_submenu5} to iron bars named "&e&lL'Equilibre"
+                set slot 37 of {_submenu5} to player head named "&e&lVise la tete"
+                set slot 38 of {_submenu5} to dirt named "&e&lLa Memoire"
+                set slot 39 of {_submenu5} to spruce trapdoor named "&e&lLes Trappes"
+                set slot 40 of {_submenu5} to iron pickaxe named "&e&lCreuse en dessous"
             
-            loop 9 and 10 and 11 and 12 and 13 and 14 and 15 and 16 and 17 and 27 and 28 and 29 and 30 and 31 and 32 and 33 and 34 and 35 and 46 and 47 and 48 and 49 and 50 and 51 and 52 and 53 and 45:
-                set slot loop-value of {_submenu5} to white stained glass pane named "TP prï¿½sentateur"
-
-            open {_submenu5} to player
-
-
-
-
+                loop 9 and 10 and 11 and 12 and 13 and 14 and 15 and 16 and 17 and 27 and 28 and 29 and 30 and 31 and 32 and 33 and 34 and 35 and 46 and 47 and 48 and 49 and 50 and 51 and 52 and 53 and 45:
+                    set slot loop-value of {_submenu5} to white stained glass pane named "TP presentateur"
+            
+                open {_submenu5} to player
+       
 on inventory click:
     if name of event-inventory is "&e&lGestion des joueurs&r":
         cancel event

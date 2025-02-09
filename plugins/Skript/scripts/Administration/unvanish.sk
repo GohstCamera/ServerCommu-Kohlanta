@@ -3,4 +3,4 @@ command /unvanish <player>:
     permission message: &cVous n'avez pas la permission d'utiliser cette commande.
     trigger:
         execute console command "effect clear %arg-1% minecraft:invisibility "
-        send "&aLe joueur %arg-1% a est présent." to player
+        send "&aLe joueur %arg-1% a est prÃ©sent." to player
