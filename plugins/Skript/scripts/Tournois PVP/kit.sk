@@ -1,0 +1,41 @@
+command /givekit <player> <text>:
+    permission: op
+    trigger:
+        if argument 2 is "Guerrier" or "Archer" or "Soigneur" or "Démolisseur":
+            if player exists with name argument 1:
+                if argument 2 is "Guerrier":
+                    execute console command "give %argument 1% diamond_sword"
+                    execute console command "give %argument 1% iron_helmet"
+                    execute console command "give %argument 1% iron_chestplate"
+                    execute console command "give %argument 1% iron_leggings"
+                    execute console command "give %argument 1% iron_boots"
+                    send "&aVous avez reçu le kit Guerrier!" to argument 1
+                if argument 2 is "Archer":
+                    execute console command "give %argument 1% bow"
+                    execute console command "give %argument 1% arrow 64"
+                    execute console command "give %argument 1% leather_helmet"
+                    execute console command "give %argument 1% leather_chestplate"
+                    execute console command "give %argument 1% leather_leggings"
+                    execute console command "give %argument 1% leather_boots"
+                    send "&aVous avez reçu le kit Archer!" to argument 1
+                if argument 2 is "Soigneur":
+                    execute console command "give %argument 1% minecraft:potion{Potion:\"minecraft:healing\"}"
+                    execute console command "give %argument 1% golden_apple"
+                    execute console command "give %argument 1% chainmail_helmet"
+                    execute console command "give %argument 1% chainmail_chestplate"
+                    execute console command "give %argument 1% chainmail_leggings"
+                    execute console command "give %argument 1% chainmail_boots"
+                    send "&aVous avez reçu le kit Soigneur!" to argument 1
+                if argument 2 is "Démolisseur":
+                    execute console command "give %argument 1% tnt"
+                    execute console command "give %argument 1% flint_and_steel"
+                    execute console command "give %argument 1% iron_helmet{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
+                    execute console command "give %argument 1% iron_chestplate{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
+                    execute console command "give %argument 1% iron_leggings{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
+                    execute console command "give %argument 1% iron_boots{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
+                    send "&aVous avez reçu le kit Démolisseur!" to argument 1
+                send "&aLe kit %argument 2% a été donné à %argument 1%!" to player
+            else:
+                send "&cLe joueur %argument 1% n'existe pas." to player
+        else:
+            send "&cKit invalide! Les kits disponibles sont: Guerrier, Archer, Soigneur, Démolisseur." to player

@@ -1,0 +1,34 @@
+command /assignteam <player> <text>:
+    trigger:
+        if argument 2 is "none":
+            loop 20 times:
+                if {team::%loop-number%::%argument 1%} is set:
+                    delete {team::%loop-number%::%argument 1%}
+                    execute console command "lp user %argument 1% parent remove Team%loop-number%"
+                    execute console command "team leave %argument 1%"
+                    send "&a%argument 1% a été retiré de l'équipe %loop-number%." to player
+                    send "&aVous avez été retiré de l'équipe %loop-number%." to argument 1
+                    stop
+            send "&c%argument 1% n'est dans aucune équipe." to player
+        else if argument 2 parsed as number is between 1 and 20:
+            loop 20 times:
+                if {team::%loop-number%::%argument 1%} is set:
+                    delete {team::%loop-number%::%argument 1%}
+                    execute console command "lp user %argument 1% parent remove Team%loop-number%"
+                    execute console command "team leave %argument 1%"
+            set {team::%argument 2%::%argument 1%} to true
+            execute console command "lp user %argument 1% parent add Team%argument 2%"
+            execute console command "team join Team%argument 2% %argument 1%"
+            send "&a%argument 1% a été assigné à l'équipe Team%argument 2%." to player
+            send "&aVous avez été assigné à l'équipe Team%argument 2%." to argument 1
+        else:
+            send "&cL'équipe %argument 2% n'existe pas. Veuillez choisir un nombre entre 1 et 20 ou 'none' pour retirer un joueur." to player
+
+command /listteams:
+    trigger:
+        send "&aListe des joueurs et leurs équipes :" to player
+        loop all players:
+            loop 20 times:
+                if {team::%loop-number%::%loop-player%} is set:
+                    send "&a%loop-player% est dans l'équipe Team%loop-number%." to player
+                    stop loop

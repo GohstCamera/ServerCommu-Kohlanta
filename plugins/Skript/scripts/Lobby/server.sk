@@ -27,14 +27,32 @@ on inventory click:
     if name of event-inventory is "&6&lSelection du Mode de Jeu":
         cancel event
         if index of event-slot is 10:
-            # Ajoute ici la commande pour rejoindre Koh-Lanta
+            execute console command "lp user %player% parent clear"
+            wait 1 tick
+            execute player command "mvtp world"
+            execute console command "lp user %player% parent set KohLanta"
         if index of event-slot is 12:
-            # Ajoute ici la commande pour rejoindre Ninja Warrior
+            execute console command "lp user %player% parent clear"
+            wait 1 tick
+            execute player command "mvtp Ninja_Warrior"
+            execute console command "lp user %player% parent set Ninja_Warrior"
         if index of event-slot is 14:
-            # Ajoute ici la commande pour rejoindre Tournois PVP
+            execute console command "lp user %player% parent clear"
+            wait 1 tick
+            execute player command "mvtp PVP2"
+            execute console command "lp user %player% parent set PVP"
         if index of event-slot is 16:
-            # Ajoute ici la commande pour rejoindre Hickabrain
+            execute console command "lp user %player% parent clear"
+            wait 1 tick
+            execute player command "mvtp Hickabrain"
+            execute console command "lp user %player% parent set hickabrain"
         if index of event-slot is 20:
-            # Ajoute ici la commande pour rejoindre The Platform
+            execute console command "lp user %player% parent clear"
+            wait 1 tick
+            execute player command "mvtp The_Platform"
+            execute console command "lp user %player% parent set The_Platform"
         if index of event-slot is 24:
-            execute console command "server lobby" # Commande pour retourner au lobby
+            execute console command "lp user %player% parent clear"
+            wait 1 tick
+            execute player command "spawn %player%"
+            execute console command "lp user %player% parent set default" # Commande pour retourner au lobby et mettre le rôle par défaut
