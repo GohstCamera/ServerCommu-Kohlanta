@@ -8,6 +8,7 @@ command /assignteam <player> <text>:
                     execute console command "team leave %argument 1%"
                     send "&a%argument 1% a été retiré de l'équipe %loop-number%." to player
                     send "&aVous avez été retiré de l'équipe %loop-number%." to argument 1
+                    execute console command "effect clear %argument 1%"
                     stop
             send "&c%argument 1% n'est dans aucune équipe." to player
         else if argument 2 parsed as number is between 1 and 20:
@@ -16,9 +17,11 @@ command /assignteam <player> <text>:
                     delete {team::%loop-number%::%argument 1%}
                     execute console command "lp user %argument 1% parent remove Team%loop-number%"
                     execute console command "team leave %argument 1%"
+                    execute console command "effect give %argument 1% minecraft:weakness 999999 255 true"
             set {team::%argument 2%::%argument 1%} to true
             execute console command "lp user %argument 1% parent add Team%argument 2%"
             execute console command "team join Team%argument 2% %argument 1%"
+            execute console command "effect give %argument 1% minecraft:weakness 999999 255 true"
             send "&a%argument 1% a été assigné à l'équipe Team%argument 2%." to player
             send "&aVous avez été assigné à l'équipe Team%argument 2%." to argument 1
         else:

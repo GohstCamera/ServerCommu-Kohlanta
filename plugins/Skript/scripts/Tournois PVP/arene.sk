@@ -1,0 +1,37 @@
+command /tparene <text> <text>:
+    trigger:
+        if argument 1 is set:
+            if argument 2 is set:
+                if argument 1 does not start with "Team":
+                    send "L'équipe %argument 1% n'existe pas." to player
+                    stop
+                set {_team::*} to {teams::%argument 1%::*}
+                if {_team::*} is empty:
+                    send "L'équipe %argument 1% n'existe pas." to player
+                    stop
+                if argument 2 is "arene1":
+                    set {_arena} to location(100, 64, 100, world("pvp2"))
+                    set {_world} to "PVP2"
+                else if argument 2 is "arene2":
+                    set {_arena} to location(150, 64, 150, world("pvp2"))
+                    set {_world} to "PVP2"
+                else if argument 2 is "arene3":
+                    set {_arena} to location(200, 64, 200, world("pvp3"))
+                    set {_world} to "PVP3"
+                else if argument 2 is "arene4":
+                    set {_arena} to location(250, 64, 250, world("pvp3"))
+                    set {_world} to "PVP3"
+                else if argument 2 is "arene5":
+                    set {_arena} to location(300, 64, 300, world("pvp3"))
+                    set {_world} to "PVP3"
+                else:
+                    send "L'arène spécifiée n'existe pas." to player
+                    stop
+                loop {_team::*}:
+                    execute console command "mvtp %loop-value% %{_world}%"
+                    execute console command "tp %loop-value% %location of {_arena}%"
+                send "L'équipe %argument 1% a été téléportée à %argument 2%." to player
+            else:
+                send "Veuillez spécifier une arène." to player
+        else:
+            send "Veuillez spécifier une équipe." to player

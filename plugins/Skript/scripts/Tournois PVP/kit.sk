@@ -1,41 +1,179 @@
 command /givekit <player> <text>:
     permission: op
     trigger:
-        if argument 2 is "Guerrier" or "Archer" or "Soigneur" or "Démolisseur":
-            if player exists with name argument 1:
-                if argument 2 is "Guerrier":
-                    execute console command "give %argument 1% diamond_sword"
-                    execute console command "give %argument 1% iron_helmet"
-                    execute console command "give %argument 1% iron_chestplate"
-                    execute console command "give %argument 1% iron_leggings"
-                    execute console command "give %argument 1% iron_boots"
-                    send "&aVous avez reçu le kit Guerrier!" to argument 1
-                if argument 2 is "Archer":
-                    execute console command "give %argument 1% bow"
-                    execute console command "give %argument 1% arrow 64"
-                    execute console command "give %argument 1% leather_helmet"
-                    execute console command "give %argument 1% leather_chestplate"
-                    execute console command "give %argument 1% leather_leggings"
-                    execute console command "give %argument 1% leather_boots"
-                    send "&aVous avez reçu le kit Archer!" to argument 1
-                if argument 2 is "Soigneur":
-                    execute console command "give %argument 1% minecraft:potion{Potion:\"minecraft:healing\"}"
-                    execute console command "give %argument 1% golden_apple"
-                    execute console command "give %argument 1% chainmail_helmet"
-                    execute console command "give %argument 1% chainmail_chestplate"
-                    execute console command "give %argument 1% chainmail_leggings"
-                    execute console command "give %argument 1% chainmail_boots"
-                    send "&aVous avez reçu le kit Soigneur!" to argument 1
-                if argument 2 is "Démolisseur":
-                    execute console command "give %argument 1% tnt"
-                    execute console command "give %argument 1% flint_and_steel"
-                    execute console command "give %argument 1% iron_helmet{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
-                    execute console command "give %argument 1% iron_chestplate{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
-                    execute console command "give %argument 1% iron_leggings{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
-                    execute console command "give %argument 1% iron_boots{Enchantments:[{id:\"minecraft:blast_protection\",lvl:1}]}"
-                    send "&aVous avez reçu le kit Démolisseur!" to argument 1
-                send "&aLe kit %argument 2% a été donné à %argument 1%!" to player
-            else:
-                send "&cLe joueur %argument 1% n'existe pas." to player
+        if arg 2 is "Guerrier":
+            execute console command "/give %arg 1% diamond_helmet[enchantments={levels:{protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% diamond_chestplate[enchantments={levels:{protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% diamond_leggings[enchantments={levels:{protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% diamond_boots[enchantments={levels:{protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% diamond_sword[enchantments={levels:{sharpness:3,unbreaking:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% shield"
+            wait 1 tick
+            execute console command "/give %arg 1% cooked_beef 32"
+            wait 1 tick
+            execute console command "/give %arg 1% splash_potion[potion_contents={custom_effects:[{id:instant_health,duration:1,amplifier:1,ambient:1b}]}] 3"
+            wait 1 tick
+            execute console command "/give %arg 1% totem_of_undying 1"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%"
+            send "&aKit Guerrier donné à %arg 1%" to player
+        else if arg 2 is "Archer":
+            execute console command "/give %arg 1% iron_helmet[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_chestplate[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_leggings[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_boots[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_sword[enchantments={levels:{sharpness:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% bow[enchantments={levels:{flame:1,infinity:1,power:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% arrow 1"
+            wait 1 tick
+            execute console command "/give %arg 1% splash_potion[potion_contents={custom_effects:[{id:speed,duration:1800,amplifier:1,ambient:1b}]}] 3"
+            wait 1 tick
+            execute console command "/give %arg 1% totem_of_undying 1"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%"
+            send "&aKit Archer donné à %arg 1%" to player
+        else if arg 2 is "Tank":
+            execute console command "/give %arg 1% netherite_helmet[enchantments={levels:{protection:4,thorns:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% netherite_chestplate[enchantments={levels:{protection:4,thorns:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% netherite_leggings[enchantments={levels:{protection:4,thorns:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% netherite_boots[enchantments={levels:{protection:4,thorns:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% netherite_axe[enchantments={levels:{sharpness:3,unbreaking:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% splash_potion[potion_contents={custom_effects:[{id:instant_health,duration:1,amplifier:1,ambient:1b}]}] 3"
+            wait 1 tick
+            execute console command "/give %arg 1% golden_apple 3"
+            wait 1 tick
+            execute console command "/give %arg 1% shield 1"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%"            
+            send "&aKit Tank donné à %arg 1%" to player
+        else if arg 2 is "Assassin":
+            execute console command "/give %arg 1% leather_helmet"
+            wait 1 tick
+            execute console command "/give %arg 1% leather_chestplate"
+            wait 1 tick
+            execute console command "/give %arg 1% leather_leggings"
+            wait 1 tick
+            execute console command "/give %arg 1% leather_boots"
+            wait 1 tick
+            execute console command "/give %arg 1% stone_sword[enchantments={levels:{sharpness:3,knockback:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% splash_potion[potion_contents={custom_color:65280,custom_effects:[{id:poison,duration:500,amplifier:1,ambient:1b}]}] 3"
+            wait 1 tick
+            execute console command "/give %arg 1% enderpearl 3"
+            wait 1 tick
+            execute console command "/give %arg 1% snowball 16"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%"             
+            send "&aKit Assassin donné à %arg 1%" to player
+        else if arg 2 is "Pyroman":
+            execute console command "/give %arg 1% chainmail_helmet[enchantments={levels:{fire_protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% chainmail_chestplate[enchantments={levels:{fire_protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% chainmail_leggings[enchantments={levels:{fire_protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% chainmail_boots[enchantments={levels:{fire_protection:4}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% golden_sword[enchantments={levels:{sharpness:3,fire_aspect:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_color:8606770,custom_effects:[{id:fire_resistance,duration:2500,amplifier:1,ambient:1b}]}] 3"
+            wait 1 tick
+            execute console command "/give %arg 1% bow[enchantments={levels:{flame:1,infinity:1}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% arrow 1"
+            wait 1 tick
+            execute console command "/give %arg 1% lava_bucket 1"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%"                         
+            send "&aKit Pyroman donné à %arg 1%" to player
+        else if arg 2 is "Enderman":
+            execute console command "/give %arg 1% iron_helmet[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_chestplate[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_leggings[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_boots[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% netherite_sword[enchantments={levels:{sharpness:3,knockback:1}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% ender_pearl 16"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_color:16383998,custom_effects:[{id:invisibility,duration:3500,amplifier:1,ambient:1b}]}] 3"
+            wait 1 tick
+            execute console command "/give %arg 1% totem_of_undying 1"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%"  
+            send "&aKit Enderman donné à %arg 1%" to player
+        else if arg 2 is "Explosif":
+            execute console command "/give %arg 1% leather_helmet[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% leather_chestplate[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% leather_leggings[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% leather_boots[enchantments={levels:{protection:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% iron_sword[enchantments={levels:{sharpness:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% splash_potion[potion_contents={custom_color:16383998,custom_effects:[{id:jump_boost,duration:1800,amplifier:1,ambient:1b}]}] 3"
+            wait 1 tick
+            execute console command "/give %arg 1% tnt 16"
+            wait 1 tick
+            execute console command "/give %arg 1% flint_and_steel[enchantments={levels:{unbreaking:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% bow[enchantments={levels:{power:3,punch:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% arrow 32"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%" 
+            send "&aKit Explosif donné à %arg 1%" to player
+        else if arg 2 is "Sorcier":
+            execute console command "/give %arg 1% golden_helmet[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% golden_chestplate[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% golden_leggings[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% golden_boots[enchantments={levels:{protection:2}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% stick[enchantments={levels:{knockback:3}}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:jump_boost,duration:500,amplifier:1,ambient:1b}]}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:poison,duration:500,amplifier:1,ambient:1b}]}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:speed,duration:500,amplifier:1,ambient:1b}]}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:slowness,duration:500,amplifier:1,ambient:1b}]}"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:slowness,duration:500,amplifier:6,ambient:1b},{id:resistance,duration:500,amplifier:4}]}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:instant_damage,duration:1,amplifier:2,ambient:1b}]}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:instant_health,duration:1,amplifier:2,ambient:1b}]}]"
+            wait 1 tick
+            execute console command "/give %arg 1% lingering_potion[potion_contents={custom_effects:[{id:invisibility,duration:500,amplifier:1,ambient:1b}]}]"
+            wait 1 tick
+            execute console command "/give %arg 1% totem_of_undying 1"
+            wait 1 tick
+            execute console command "/ocm mode old %arg 1%" 
+            send "&aKit Sorcier donné à %arg 1%" to player
         else:
-            send "&cKit invalide! Les kits disponibles sont: Guerrier, Archer, Soigneur, Démolisseur." to player
+            send "&cCe kit n'existe pas!" to player
