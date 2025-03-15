@@ -1,0 +1,14 @@
+command /addroletoall <text>:
+    permission: addroletoall.use
+    permission message: "&cTu n'as pas la permission d'utiliser cette commande."
+    trigger:
+        set {_role} to argument 1
+        if {_role} is not set:
+            send "&cVeuillez specifier le nom du role que vous souhaitez attribuer a tous les joueurs."
+            stop
+
+        # Attribution du role pour chaque joueur
+        loop all players:
+            execute console command "lp user %loop-player% parent add %{_role}%"
+            send "&aLe role %{_role}% a ete ajoute a %loop-player%."
+        send "&aLe role %{_role}% a ete ajoute a tous les joueurs."

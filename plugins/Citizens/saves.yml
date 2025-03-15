@@ -24,7 +24,7 @@ npc:
         z: 429.5
         yaw: 2.2096
         pitch: 82.05
-    traitnames: scoreboardtrait,spawned,location,type,skintrait,inventory,owner
+    traitnames: location,type,spawned,skintrait,scoreboardtrait,inventory,owner
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -51,7 +51,7 @@ npc:
         z: 429.5228
         yaw: 2.3585
         pitch: 12.5992
-    traitnames: scoreboardtrait,spawned,location,type,skintrait,inventory,owner
+    traitnames: location,type,spawned,skintrait,scoreboardtrait,inventory,owner
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -109,7 +109,7 @@ npc:
         hand:
           type_key: compass
           amount: 1
-    traitnames: scoreboardtrait,rotationtrait,spawned,location,type,skintrait,commandtrait,lookclose,inventory,equipment,owner
+    traitnames: location,rotationtrait,type,spawned,skintrait,equipment,commandtrait,scoreboardtrait,inventory,owner,lookclose
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -152,7 +152,7 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-    traitnames: scoreboardtrait,rotationtrait,spawned,location,type,skintrait,lookclose,inventory,equipment,owner
+    traitnames: location,rotationtrait,type,spawned,skintrait,equipment,scoreboardtrait,inventory,owner,lookclose
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -195,7 +195,7 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-    traitnames: scoreboardtrait,rotationtrait,spawned,location,type,skintrait,lookclose,inventory,equipment,owner
+    traitnames: location,rotationtrait,type,spawned,skintrait,equipment,scoreboardtrait,inventory,owner,lookclose
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -246,7 +246,7 @@ npc:
       attributetrait:
         attributes:
           GENERIC_JUMP_STRENGTH: 10.0
-    traitnames: scoreboardtrait,entitypose,rotationtrait,spawned,location,skintrait,lookclose,inventory,equipment,owner,anchors,type,attributetrait
+    traitnames: type,skintrait,inventory,lookclose,location,anchors,rotationtrait,spawned,attributetrait,entitypose,equipment,scoreboardtrait,owner
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -266,13 +266,13 @@ npc:
         uuid: e0578e53-cbb5-49fc-81a9-4563c7076c84
       type: PLAYER
       location:
-        bodyYaw: 10.120796
+        bodyYaw: 159.656
         world: world
         x: 4.988
         y: 63.4375
         z: 512.7836
-        yaw: 10.1208
-        pitch: -20.8584
+        yaw: 179.656
+        pitch: -2.5095
       commandtrait:
         commands:
           '0':
@@ -303,7 +303,7 @@ npc:
         hand:
           type_key: fishing_rod
           amount: 1
-    traitnames: scoreboardtrait,rotationtrait,spawned,location,type,skintrait,commandtrait,lookclose,inventory,equipment,owner
+    traitnames: location,rotationtrait,type,spawned,skintrait,equipment,commandtrait,scoreboardtrait,inventory,owner,lookclose
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -355,7 +355,7 @@ npc:
             cost: -1.0
             experienceCost: -1
       type: PLAYER
-    traitnames: scoreboardtrait,rotationtrait,spawned,location,type,skintrait,commandtrait,lookclose,inventory,owner
+    traitnames: location,rotationtrait,type,spawned,skintrait,commandtrait,scoreboardtrait,inventory,owner,lookclose
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -394,7 +394,7 @@ npc:
         signature: USmArgtcKXqWDyHLd9uuHfEI1wNd+PAdRBSB4u6Q5kHHl9wk/kBGE13Gfb9Hl1ypnBS5L6o+h9z20kw9FtOMikqJG1So90LfKNuZDe0a5neYH1/Wj2+dW8DSsI9tYqU8cdjLlmp6btoftHqOKEYNHTAVNpH9/+QjmqfXDr2nGVXRUkIYsancB2IyEIH2cZTLCA2+JIWfxvbUH8BOQO3ezzG7vLpyqaxtBzjmLw86Gicv/N5SCkuY4SgOmK08nk2ZioPWlX8OQ8Q1RahGevBpfcPtYahurKLcqJeRcNwsRCDU8aCltwSyHdDOJs+nUOolA0gCThGjvhNO/kETxsRchN/dD8vaBr66UgiMju3OSVseeSybfWt6tApZBVVNgZTLOp/xsPMl3SOenT4dDQD5aEzYs4jC7PdJo9XvVN/QXHECFAWO65GspjrWwQ66IAOJFyTn9otdGNzUUy9IVizEWZycKpMBdPH+N+33vts6zGTtisPpVaXn5ypib/0uDGiZ19gh7fDqLzyGOIcQCt33tcfsUaFt1cI1/YZ8J+nWCpmiO61mUaugM/3xsSkCBrJFcetezLE/uf/ngW8kq/ke39U7bOyBcJILO0UEVAfC3HmZn3wpdBB66abQpIY4cLZ357yUtmq3wxCFAA6sEnN8XIDdrG/D2P3A+asc8dRQh10=
         textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTcyNTEwOTA1MzIwNCwKICAicHJvZmlsZUlkIiA6ICI4MTlkZjAzMTdmZmQ0ZDBlYjMzYjY3YWFlODIwMmM5NSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMb3VsaWNoZWUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjRkMjI2YzM2ZjAxM2EyOGYwZDFkZWY4YmRjZDM0OTAwNDNjNDU1Mjk1N2IwODE2ZjEzOTZjNTM4YmMzY2E1OCIKICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2I0MGE5MmUzMmI1N2ZkNzMyYTAwZmMzMjVlN2FmYjAwYTdjYTc0OTM2YWQ1MGQ4ZTg2MDE1MmU0ODJjZmJkZSIKICAgIH0KICB9Cn0=
         skinName: Loulichee
-    traitnames: scoreboardtrait,spawned,location,type,skintrait,inventory,equipment,owner
+    traitnames: location,type,spawned,skintrait,equipment,scoreboardtrait,inventory,owner
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -441,7 +441,7 @@ npc:
           '0': 0.0
           '1': 360.0
       spawned: true
-    traitnames: scoreboardtrait,rotationtrait,spawned,location,type,skintrait,gamemodetrait,lookclose,inventory,equipment,owner
+    traitnames: location,rotationtrait,type,spawned,gamemodetrait,skintrait,equipment,scoreboardtrait,inventory,owner,lookclose
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -469,7 +469,7 @@ npc:
         bodyYaw: -125.54803
         world: world
         x: -34.5372
-        y: 68.0
+        y: 68.4
         z: 535.494
         yaw: -125.548
         pitch: 6.7419
@@ -484,7 +484,7 @@ npc:
       spawned: true
       owner:
         uuid: 819df031-7ffd-4d0e-b33b-67aae8202c95
-    traitnames: scoreboardtrait,spawned,location,sittrait,type,skintrait,inventory,equipment,owner
+    traitnames: location,type,spawned,skintrait,equipment,scoreboardtrait,inventory,owner,sittrait
     navigator:
       speedmodifier: 1.0
       avoidwater: false
@@ -522,7 +522,7 @@ npc:
       spawned: true
       owner:
         uuid: 819df031-7ffd-4d0e-b33b-67aae8202c95
-    traitnames: scoreboardtrait,spawned,location,type,skintrait,inventory,equipment,owner
+    traitnames: location,type,spawned,skintrait,equipment,scoreboardtrait,inventory,owner
     navigator:
       speedmodifier: 1.0
       avoidwater: false

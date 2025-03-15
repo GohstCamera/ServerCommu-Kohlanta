@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 37.65.172.151
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1739801964262
+  login: 1739801790165
+money: '0'
+last-account-name: PenguinGaming04
+logoutlocation:
+  world: 468d013b-331e-4ccd-8c4e-649d732e717a
+  world-name: world
+  x: -151.4719569008736
+  y: 168.65767136311587
+  z: -251.43336954470092
+  yaw: 127.75045013427734
+  pitch: 23.01955223083496
+lastlocation:
+  world: 83b66c3e-f765-4d3f-8645-9bd47a40c903
+  world-name: Lobby
+  x: 4.2029765336792995
+  y: -59.2032643993313
+  z: -1.090038188739591
+  yaw: -39.41492462158203
+  pitch: 2.7470760345458984

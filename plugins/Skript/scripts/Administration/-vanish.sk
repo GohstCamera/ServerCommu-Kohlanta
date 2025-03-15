@@ -1,0 +1,6 @@
+command /vanish <player>:
+    permission: admin.vanish.join
+    permission message: &cVous n'avez pas la permission d'utiliser cette commande.
+    trigger:
+        execute console command "effect give %arg-1% minecraft:invisibility infinite 99 true"
+        send "&aLe joueur %arg-1% a ete mis en vanish." to player

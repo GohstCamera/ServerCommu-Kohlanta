@@ -1,0 +1,14 @@
+command /removeroletoall <text>:
+    permission: removeroletoall.use
+    permission message: &cTu n'as pas la permission d'utiliser cette commande.
+    trigger:
+        set {_role} to argument 1
+        if {_role} is not set:
+            send "&cVeuillez specifier le nom du role que vous souhaitez enlever a tous les joueurs."
+            stop
+
+        # Suppression du role pour chaque joueur
+        loop all players:
+            execute console command "lp user %loop-player% parent remove %{_role}%"
+            send "&aLe role %{_role}% a ete enleve a %loop-player%."
+        send "&aLe role %{_role}% a ete enleve a tous les joueurs."
