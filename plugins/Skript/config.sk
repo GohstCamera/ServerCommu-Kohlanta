@@ -271,8 +271,8 @@ runtime errors:
 	
 	# ==== Variables ====
 	
-# ==== Variables ====
-
+	# ==== Variables ====
+	
 databases:
 	# Databases to store variables in. These can either be used as a simple one-server-storage
 	# where variables are written constantly but only read at server start,
@@ -394,7 +394,7 @@ databases:
 		
 		# ==== Settings that should not be changed ====
 		
-version: 2.10.1
+version: 2.10.2
 # DO NOT CHANGE THIS VALUE MANUALLY!
 # This saves for which version of Skript this configuration was written for.
 # If it does not match the version of the .jar file then the config will be updated automatically.

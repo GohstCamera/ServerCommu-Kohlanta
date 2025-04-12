@@ -1,0 +1,8 @@
+# === Skript's variable storage ===
+# Please do not modify this file manually!
+#
+# version: 2.10.1
+
+kit::a4fe7f1a-5142-4a8d-984f-731cee214eb0, string, 800C44C3A96D6F6C697373657572
+team::1::a4fe7f1a-5142-4a8d-984f-731cee214eb0, boolean, 01
+

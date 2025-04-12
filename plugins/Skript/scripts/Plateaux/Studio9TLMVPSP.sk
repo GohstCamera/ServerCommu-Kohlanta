@@ -1,0 +1,42 @@
+command /Studio9:
+    permission: studio9.menu
+    permission message: "&cVous n'avez pas la permission d'utiliser cette commande."
+    trigger:
+        set {_S9menu} to a new chest inventory with 2 row named "&6Menu Studio9"
+        set slot 0 of {_S9menu} to orange wool named "&aOrange" with lore "&7Clique pour mettre les laines oranges "
+        set slot 13 of {_S9menu} to stone button named "&bLancé le chrono" with lore "&7 Clique sur le button pour lancé le chrono"
+        set slot 2 of {_S9menu} to magenta wool named "&aMagenta" with lore "&7Clique pour mettre les laines magenta"
+        set slot 12 of {_S9menu} to lime wool named "&aBonne réponse" with lore "&7Clique pour valider une bonne réponse"
+        set slot 4 of {_S9menu} to blue wool named "&aBlue" with lore "&7Clique pour mettre les laines bleu"
+        set slot 14 of {_S9menu} to red wool named "&cMauvaise réponse" with lore "&7Clique pour valider une mauvaise réponse"
+        set slot 6 of {_S9menu} to white wool named "&awhite" with lore "&7Clique pour mettre les laines blanches "
+        set slot 8 of {_S9menu} to barrier named "&cFermer" with lore "&7Clique pour fermer le menu"
+        open {_S9menu} to player
+
+on inventory click:
+    if name of event-inventory is "&6Menu Studio9":  # Verifie si l'inventaire est celui du menu principal
+        cancel event
+        if clicked slot is 0:
+            execute player command "fill -56 -61 17 -91 -49 58 orange_wool replace white_wool"
+            execute player command "fill -56 -61 17 -91 -49 58 minecraft:ochre_froglight replace minecraft:verdant_froglight"
+        if clicked slot is 2:
+            execute player command "fill -56 -61 17 -91 -49 58 magenta_wool replace orange_wool"
+            execute player command "fill -56 -61 17 -91 -49 58 minecraft:pearlescent_froglight replace minecraft:ochre_froglight"
+        if clicked slot is 12:
+            send "&aBonne réponse validée !" to all players
+            send title "&aBonne réponse validée !" to all players
+            execute player command "playsound minecraft:block.amethyst_cluster.break block @a "
+        if clicked slot is 4:
+            execute player command "fill -56 -61 17 -91 -49 58 blue_wool replace magenta_wool"
+            execute player command "fill -56 -61 17 -91 -49 58 minecraft:sea_lantern replace minecraft:pearlescent_froglight"
+        if clicked slot is 14:
+            send "&cMauvaise réponse validée !" to all players
+            send title "&cMauvaise réponse validée !" to all players
+            execute player command "playsound minecraft:block.fire.extinguish block @a"
+        if clicked slot is 6:
+            execute player command "fill -56 -61 17 -91 -49 58 white_wool replace blue_wool"
+            execute player command "fill -56 -61 17 -91 -49 58 minecraft:verdant_froglight replace minecraft:sea_lantern"
+        if clicked slot is 13:
+            execute player command "scoreboard players set 0 countdownstudio 1"
+        if clicked slot is 8:
+            close player's inventory
